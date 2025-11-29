@@ -3,11 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <description>The 'Learn New Java Features' Course: New Features in Java 18-21</description>
-    <name>new-features-in-java-18-21</name>
+    <description>The 'Learn New Java Features' Course: New Features in Java 22-25</description>
+    <name>new-features-in-java-22-25</name>
 
     <groupId>com.baeldung</groupId>
-    <artifactId>lnj-new-features-in-java-18-21</artifactId>
+    <artifactId>lnj-new-features-in-java-22-25</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
 
