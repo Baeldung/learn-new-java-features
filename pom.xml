@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <description>The 'Learn New Java Features' Course: New Features in Java 9-11</description>
+    <name>new-features-in-java-9-11</name>
+
+    <groupId>com.baeldung</groupId>
+    <artifactId>lnj-new-features-in-java-9-11</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <modules>
+    </modules>
+</project>
