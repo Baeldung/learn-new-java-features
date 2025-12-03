@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>httpclient-start</module>
+        <module>httpclient-end</module>
     </modules>
 </project>
