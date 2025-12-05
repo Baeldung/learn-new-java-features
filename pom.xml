@@ -12,5 +12,9 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>multi-line-strings-with-text-blocks-start</module>
+        <module>multi-line-strings-with-text-blocks-end</module>
+        <module>records-start</module>
+        <module>records-end</module>     
     </modules>
 </project>
