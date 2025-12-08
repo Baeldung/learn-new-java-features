@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>sequenced-collections-start</module>
+        <module>sequenced-collections-end</module>
     </modules>
 </project>
