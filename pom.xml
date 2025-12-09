@@ -12,6 +12,8 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>stream-api-additions-java-9-11-start</module>
+        <module>stream-api-additions-java-9-11-end</module>
         <module>httpclient-start</module>
         <module>httpclient-end</module>
     </modules>
