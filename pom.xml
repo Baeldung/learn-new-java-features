@@ -12,9 +12,13 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>var-local-variable-type-inference-start</module>
+        <module>var-local-variable-type-inference-end</module>
         <module>stream-api-additions-java-9-11-start</module>
         <module>stream-api-additions-java-9-11-end</module>
         <module>httpclient-start</module>
         <module>httpclient-end</module>
+        <module>new-methods-for-unmodifiable-collections-start</module>
+        <module>new-methods-for-unmodifiable-collections-end</module>
     </modules>
 </project>
