@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>unnamed-variables-and-patterns-start</module>
+        <module>unnamed-variables-and-patterns-end</module>
     </modules>
 </project>
