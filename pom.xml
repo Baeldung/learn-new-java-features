@@ -12,6 +12,8 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>pattern-matching-instanceof-start</module>
+        <module>pattern-matching-instanceof-end</module>
         <module>multi-line-strings-with-text-blocks-start</module>
         <module>multi-line-strings-with-text-blocks-end</module>
         <module>records-start</module>
