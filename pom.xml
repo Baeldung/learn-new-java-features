@@ -17,6 +17,8 @@
         <module>multi-line-strings-with-text-blocks-start</module>
         <module>multi-line-strings-with-text-blocks-end</module>
         <module>records-start</module>
-        <module>records-end</module>     
+        <module>records-end</module>
+        <module>stream-api-additions-java-12-17-start</module>
+        <module>stream-api-additions-java-12-17-end</module>
     </modules>
 </project>
