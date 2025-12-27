@@ -20,5 +20,7 @@
         <module>httpclient-end</module>
         <module>new-methods-for-unmodifiable-collections-start</module>
         <module>new-methods-for-unmodifiable-collections-end</module>
+        <module>other-additions-java-9-11-start</module>
+        <module>other-additions-java-9-11-end</module>
     </modules>
 </project>
