@@ -18,7 +18,11 @@
         <module>multi-line-strings-with-text-blocks-end</module>
         <module>records-start</module>
         <module>records-end</module>
+        <module>switch-expressions-start</module>
+        <module>switch-expressions-end</module>
         <module>stream-api-additions-java-12-17-start</module>
         <module>stream-api-additions-java-12-17-end</module>
+        <module>sealed-classes-start</module>
+        <module>sealed-classes-end</module>
     </modules>
 </project>
