@@ -12,9 +12,13 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>compact-source-files-start</module>
+        <module>compact-source-files-end</module>
         <module>flexible-constructor-bodies-start</module>
         <module>flexible-constructor-bodies-end</module>
         <module>unnamed-variables-and-patterns-start</module>
         <module>unnamed-variables-and-patterns-end</module>
+        <module>other-additions-java-22-25-start</module>
+        <module>other-additions-java-22-25-end</module>
     </modules>
 </project>
