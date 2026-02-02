@@ -24,5 +24,7 @@
         <module>stream-api-additions-java-12-17-end</module>
         <module>sealed-classes-start</module>
         <module>sealed-classes-end</module>
+        <module>other-additions-java-12-17-start</module>
+        <module>other-additions-java-12-17-end</module>
     </modules>
 </project>
