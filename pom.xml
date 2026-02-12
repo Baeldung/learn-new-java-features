@@ -12,6 +12,10 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>jpms-start</module>
+        <module>jpms-end</module>
+        <module>jpms-api-start</module>
+        <module>jpms-api-end</module>
         <module>var-local-variable-type-inference-start</module>
         <module>var-local-variable-type-inference-end</module>
         <module>stream-api-additions-java-9-11-start</module>
