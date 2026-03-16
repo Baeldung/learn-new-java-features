@@ -30,7 +30,7 @@ class NewJavaFeaturesUnitTest {
     }
 
     @Test
-    void whenUsingTakeWhile_thenStopsStreamingAfterFirstMatchingElement() {
+    void whenUsingTakeWhile_thenStopsStreamingAfterFirstNonMatchingElement() {
         Stream<Integer> stream = Stream.iterate(0, i -> i + 1)
             .takeWhile(nr -> nr < 10);
 
@@ -47,7 +47,7 @@ class NewJavaFeaturesUnitTest {
     }
 
     @Test
-    void whenUsingIterateAndPassAPredicate_thenStopsStreamingWhenPredicateIsTrue() {
+    void whenUsingIterateAndPassAPredicate_thenStopsStreamingWhenPredicateIsFalse() {
         Stream<Integer> stream = Stream.iterate(0, i -> i < 10, i -> i + 1);
 
         assertEquals(10, stream.count());
