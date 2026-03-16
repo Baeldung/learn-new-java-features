@@ -16,5 +16,9 @@
         <module>sequenced-collections-end</module>
         <module>pattern-matching-switch-start</module>
         <module>pattern-matching-switch-end</module>
+        <module>other-additions-start</module>
+        <module>other-additions-end</module>
+        <module>virtual-threads-start</module>
+        <module>virtual-threads-end</module>
     </modules>
 </project>
