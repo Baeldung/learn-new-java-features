@@ -16,8 +16,8 @@
         <module>sequenced-collections-end</module>
         <module>pattern-matching-switch-start</module>
         <module>pattern-matching-switch-end</module>
-        <module>other-additions-start</module>
-        <module>other-additions-end</module>
+        <module>other-additions-java-18-21-start</module>
+        <module>other-additions-java-18-21-end</module>
         <module>virtual-threads-start</module>
         <module>virtual-threads-end</module>
     </modules>
