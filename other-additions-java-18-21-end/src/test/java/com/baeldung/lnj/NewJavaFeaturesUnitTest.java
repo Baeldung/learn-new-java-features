@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
-import java.time.format.FormatStyle;
 import java.util.Locale;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -17,7 +16,7 @@ class NewJavaFeaturesUnitTest {
         LocalDateTime dateTime = LocalDateTime.of(2025, 1, 20, 15, 30);
 
         DateTimeFormatter formatter = new DateTimeFormatterBuilder()
-          .appendLocalized(FormatStyle.FULL, FormatStyle.SHORT)
+          .appendLocalized("yMMMMdjmm")
           .toFormatter(Locale.US);
 
         String formattedDate = dateTime.format(formatter);
