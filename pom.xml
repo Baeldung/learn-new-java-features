@@ -12,6 +12,5 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>key-additions-java-26</module>
     </modules>
 </project>
