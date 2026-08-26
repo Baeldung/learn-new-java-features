@@ -12,5 +12,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>structured-concurrency-start</module>
+        <module>structured-concurrency-end</module>
     </modules>
 </project>
