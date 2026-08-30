@@ -14,5 +14,7 @@
     <modules>
         <module>structured-concurrency-start</module>
         <module>structured-concurrency-end</module>
+        <module>lazy-constants-start</module>
+        <module>lazy-constants-end</module>
     </modules>
 </project>
