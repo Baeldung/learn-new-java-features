@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.baeldung.lnj.domain.model.Task;
 
-class CampaignPlaybook {
+class CampaignManager {
 
     private static final LocalDate ACTIVE_UNTIL = LocalDate.of(2050, 12, 31);
 

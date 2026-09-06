@@ -12,9 +12,14 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>preview-incubator-setup</module>
         <module>structured-concurrency-start</module>
         <module>structured-concurrency-end</module>
         <module>lazy-constants-start</module>
         <module>lazy-constants-end</module>
+        <module>primitive-types-in-patterns-start</module>
+        <module>primitive-types-in-patterns-end</module>
+        <module>vector-api-start</module>
+        <module>vector-api-end</module>
     </modules>
 </project>
