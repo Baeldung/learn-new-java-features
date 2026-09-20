@@ -39,16 +39,16 @@ class PrimitivePatternMatchingUnitTest {
 
     @Test
     void givenFloatValues_whenSwitching_thenSelectsExactOrTotalPattern() {
-        float wholeValue = 12.0f;
-        float remainingValue = 12.5f;
+        float actuallyInteger = 12.0f;
+        float actuallyFloat = 12.5f;
 
-        assertEquals("Whole number: 12", switch (wholeValue) {
-            case int whole -> "Whole number: " + whole;
-            case float remaining -> "Other float: " + remaining;
+        assertEquals("Whole number: 12", switch (actuallyInteger) {
+            case int asInt -> "Whole number: " + asInt;
+            case float asFloat -> "Other float: " + asFloat;
         });
-        assertEquals("Other float: 12.5", switch (remainingValue) {
-            case int whole -> "Whole number: " + whole;
-            case float remaining -> "Other float: " + remaining;
+        assertEquals("Other float: 12.5", switch (actuallyFloat) {
+            case int asInt -> "Whole number: " + asInt;
+            case float asFloat -> "Other float: " + asFloat;
         });
     }
 }
