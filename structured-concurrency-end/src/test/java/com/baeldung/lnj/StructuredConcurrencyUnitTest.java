@@ -40,9 +40,12 @@ class StructuredConcurrencyUnitTest {
                 throw new IllegalStateException("tasks lookup failed");
             });
 
-            assertThrows(ExecutionException.class, tasks::get);
-            assertFalse(siblingFinished.get());
-            release.countDown();
+            try {
+                assertThrows(ExecutionException.class, tasks::get);
+                assertFalse(siblingFinished.get());
+            } finally {
+                release.countDown();
+            }
         }
 
         assertTrue(siblingFinished.get());

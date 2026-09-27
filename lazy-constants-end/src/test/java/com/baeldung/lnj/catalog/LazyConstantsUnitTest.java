@@ -1,6 +1,7 @@
 package com.baeldung.lnj.catalog;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,6 +29,11 @@ class LazyConstantsUnitTest {
 
         assertEquals("Design the banner", task.getName());
         assertEquals(1, TaskCatalogLoader.taskLoadCount());
+
+        Task repeated = CampaignManager.standardTask(0);
+
+        assertEquals(1, TaskCatalogLoader.taskLoadCount());
+        assertSame(task, repeated);
     }
 
 }
