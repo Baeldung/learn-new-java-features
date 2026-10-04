@@ -25,6 +25,11 @@ public class CampaignRepository {
         return List.of(buildTask("DESIGN"), buildTask("COPY"), buildTask("LAUNCH"));
     }
 
+    public Task findTask(String taskCode) throws InterruptedException {
+        simulateSlowLookup();
+        return buildTask(taskCode);
+    }
+
     private Task buildTask(String taskCode) {
         return new Task(taskCode, TASK_NAMES.get(taskCode), "Campaign task", LocalDate.of(2026, 6, 30));
     }

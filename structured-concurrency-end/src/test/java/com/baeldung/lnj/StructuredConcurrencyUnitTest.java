@@ -26,13 +26,13 @@ class StructuredConcurrencyUnitTest {
     void whenExecutorSubtaskFails_thenSiblingIsNotCancelled() throws Exception {
         CountDownLatch started = new CountDownLatch(1);
         CountDownLatch release = new CountDownLatch(1);
-        AtomicBoolean siblingFinished = new AtomicBoolean();
+        AtomicBoolean campaignLookupFinished = new AtomicBoolean();
 
         try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
             executor.submit(() -> {
                 started.countDown();
                 release.await();
-                siblingFinished.set(true);
+                campaignLookupFinished.set(true);
                 return new Campaign("SUMMER", "Summer Sale", "Seasonal promotion");
             });
             Future<List<Task>> tasks = executor.submit(() -> {
@@ -42,13 +42,13 @@ class StructuredConcurrencyUnitTest {
 
             try {
                 assertThrows(ExecutionException.class, tasks::get);
-                assertFalse(siblingFinished.get());
+                assertFalse(campaignLookupFinished.get());
             } finally {
                 release.countDown();
             }
         }
 
-        assertTrue(siblingFinished.get());
+        assertTrue(campaignLookupFinished.get());
     }
 
     @Test
@@ -65,7 +65,7 @@ class StructuredConcurrencyUnitTest {
     void whenScopedSubtaskFails_thenSiblingIsCancelled() throws Exception {
         CountDownLatch started = new CountDownLatch(1);
         CountDownLatch release = new CountDownLatch(1);
-        AtomicBoolean siblingInterrupted = new AtomicBoolean();
+        AtomicBoolean campaignLookupInterrupted = new AtomicBoolean();
 
         try (var scope = StructuredTaskScope.open()) {
             scope.fork(() -> {
@@ -73,7 +73,7 @@ class StructuredConcurrencyUnitTest {
                 try {
                     release.await();
                 } catch (InterruptedException e) {
-                    siblingInterrupted.set(true);
+                    campaignLookupInterrupted.set(true);
                     throw e;
                 }
                 return new Campaign("SUMMER", "Summer Sale", "Seasonal promotion");
@@ -86,7 +86,7 @@ class StructuredConcurrencyUnitTest {
             assertThrows(StructuredTaskScope.FailedException.class, scope::join);
         }
 
-        assertTrue(siblingInterrupted.get());
+        assertTrue(campaignLookupInterrupted.get());
     }
 
     @Test
