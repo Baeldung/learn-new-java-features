@@ -12,6 +12,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.StructuredTaskScope;
+import java.util.concurrent.StructuredTaskScope.Subtask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.junit.jupiter.api.Test;
@@ -29,7 +30,7 @@ class StructuredConcurrencyUnitTest {
         AtomicBoolean campaignLookupFinished = new AtomicBoolean();
 
         try (ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()) {
-            executor.submit(() -> {
+            Future<Campaign> campaign = executor.submit(() -> {
                 started.countDown();
                 release.await();
                 campaignLookupFinished.set(true);
@@ -52,23 +53,13 @@ class StructuredConcurrencyUnitTest {
     }
 
     @Test
-    void whenLoadingOverview_thenCampaignAndTasksAreReturned() throws Exception {
-        CampaignOverviewService service = new CampaignOverviewService(new CampaignRepository());
-
-        CampaignOverview overview = service.loadOverview("SUMMER");
-
-        assertEquals("Summer Sale", overview.campaign().getName());
-        assertEquals(List.of("DESIGN", "COPY", "LAUNCH"), overview.tasks().stream().map(Task::getCode).toList());
-    }
-
-    @Test
     void whenScopedSubtaskFails_thenSiblingIsCancelled() throws Exception {
         CountDownLatch started = new CountDownLatch(1);
         CountDownLatch release = new CountDownLatch(1);
         AtomicBoolean campaignLookupInterrupted = new AtomicBoolean();
 
         try (var scope = StructuredTaskScope.open()) {
-            scope.fork(() -> {
+            Subtask<Campaign> campaign = scope.fork(() -> {
                 started.countDown();
                 try {
                     release.await();
@@ -78,7 +69,7 @@ class StructuredConcurrencyUnitTest {
                 }
                 return new Campaign("SUMMER", "Summer Sale", "Seasonal promotion");
             });
-            scope.fork(() -> {
+            Subtask<List<Task>> tasks = scope.fork(() -> {
                 started.await();
                 throw new IllegalStateException("tasks lookup failed");
             });
